@@ -2,7 +2,6 @@
 pragma solidity ^0.8.13;
 
 contract Books {
-
     address owner;
 
     struct Book {
@@ -25,12 +24,11 @@ contract Books {
         owner = msg.sender;
     }
 
-    function update_pages(uint256 _pages) public onlyOwner() {
+    function update_pages(uint256 _pages) public onlyOwner {
         book.pages = _pages;
     }
 
     function get_book() public view returns (Book memory) {
         return book;
     }
-
 }
